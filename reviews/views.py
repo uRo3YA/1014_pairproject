@@ -6,7 +6,7 @@ from .forms import ReviewForm
 def index(request):
     contents = Review.objects.all()
     context = {
-        "contents": contents,
+        "reviews": contents,
     }
     return render(request, "reviews/index.html", context)
 
@@ -22,3 +22,9 @@ def create(request):
         review_form = ReviewForm()
     context = {"review_form": review_form}
     return render(request, "reviews/create.html", context=context)
+
+
+def detail(request, pk):
+    review = Review.objects.get(pk=pk)
+    context = {"review": review}
+    return render(request, "reviews/detail.html", context)
