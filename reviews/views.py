@@ -30,6 +30,14 @@ def detail(request, pk):
     return render(request, "reviews/detail.html", context)
 
 
+
+def delete(request, pk):
+
+    review = Review.objects.get(pk=pk)
+    review.delete()
+
+    return redirect("reviews:index")
+
 def update(request, pk):
     movie = Review.objects.get(pk=pk)
     if request.method == "POST":
@@ -41,3 +49,4 @@ def update(request, pk):
         review_form = ReviewForm(instance=movie)
     context = {"review_form": review_form}
     return render(request, "reviews/update.html", context)
+
