@@ -42,8 +42,14 @@ def login(request):
             # http://127.0.0.1:8000/accounts/login/?next=/articles/1/update/
             # request.GET.get('next') : /articles/1/update/
             # return redirect(request.GET.get("next") or "articles:index")
-            return redirect("accounts:index")
+            return redirect("accounts:index")  # 임시 완성후 삭제 필요
     else:
         form = AuthenticationForm()
     context = {"form": form}
     return render(request, "accounts/login.html", context)
+
+
+def detail(request, pk):
+    user = get_user_model().objects.get(pk=pk)
+    context = {"user": user}
+    return render(request, "accounts/detail.html", context)
