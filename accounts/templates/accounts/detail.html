@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>{{ user.username }}님의 프로필</h1>
+<table class="table text-center align-middle">
+    <thead>
+        <th>ID</th>
+        <th>username</th>
+        <th>e-mail</th>
+        <th>성</th>
+        <th>이름</th>
+        <th>생성 날짜</th>
+        <th>최근 로그인</th>
+        <th>회원 정보 수정</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{ user.username }}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.last_name}}</td>
+            <td>{{user.first_name}}</td>
+            <td>{{user.date_joined}}</td>
+            <td>{{user.last_login}}</td>
+            <td><a href="{% url 'accounts:update' %}">수정</a></td>
+        </tr>
+    </tbody>
+</table>
+{% endblock body %}
