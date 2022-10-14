@@ -28,3 +28,11 @@ def detail(request, pk):
     review = Review.objects.get(pk=pk)
     context = {"review": review}
     return render(request, "reviews/detail.html", context)
+
+
+def delete(request, pk):
+
+    review = Review.objects.get(pk=pk)
+    review.delete()
+
+    return redirect("reviews:index")
