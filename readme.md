@@ -34,6 +34,12 @@
    2. accouts앱에서 생성한 유저 정보를 같이 기록
    3. 로그인 여부, 작성자와 일치한 경우에 따라 리뷰 수정 및 삭제 기능
 
+## 기능 시연
+
+![ezgif-1-e4bf311481.gif](assets/c0588cd43b350b9ef0ecd3962175e02f72dd0d66.gif)
+
+![ezgif-1-0b002c0f44.gif](assets/b9884fdf23050a030c57c9c0fe527b7d2d00ded6.gif)
+
 ## 배운 점
 
 - 크롤링한 데이터를 DB에 저장하고 활용하는 방법
