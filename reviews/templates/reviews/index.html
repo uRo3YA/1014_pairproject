@@ -12,6 +12,7 @@
         <th>제목</th>
         <th>영화 제목</th>
         <th>영화 평점</th>
+        <th>작성자</th>
     </thead>
     <tbody>
         {% for review in reviews %}
@@ -26,7 +27,9 @@
             <td>
                 {{ review.star }}
             </td>
-
+            <td>
+                {{ review.writer }}
+            </td>
         </tr>
         {% endfor %}
 

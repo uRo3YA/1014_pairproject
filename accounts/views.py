@@ -57,7 +57,7 @@ def login(request):
 
 def logout(request):
     auth_logout(request)
-    return redirect("reviews:index")
+    return redirect("root")
 
 
 @login_required

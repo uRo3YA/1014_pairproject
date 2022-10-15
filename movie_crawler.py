@@ -31,6 +31,7 @@ urls = []
 for li in movie_list:
     a_tag = li.select_one('div[class="thumb"] > a')
     urls.append(base_url + a_tag.get("href"))
+    # print(urls)
 
 
 # 영화 사이트 이동 : 영화 제목과 줄거리 저장
@@ -45,13 +46,14 @@ def get_movie_data(url):
     soup = html.find("div", class_="poster")
     # tag & 내용 수집
     title = html.select_one('div[class="mv_info"] > h3[class="h_movie"] > a').string
-    summary = html.select_one('div[class="story_area"] > p').text
+    print(title)
+    # summary = html.select_one('div[class="story_area"] > p').text
     img = soup.find("img")["src"]
-
+    print(img)
     # dictionary로 저장
     context = {
         "title": title,
-        "summary": summary,
+        # # "summary": summary,
         "img": img[:-15],
     }
 
@@ -72,7 +74,7 @@ def add_data():
         Movie(
             title=item["title"],
             img=item["img"],
-            summary=item["summary"],
+            # summary=item["summary"],
         ).save()
 
     return result
