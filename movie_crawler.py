@@ -47,13 +47,15 @@ def get_movie_data(url):
     # tag & 내용 수집
     title = html.select_one('div[class="mv_info"] > h3[class="h_movie"] > a').string
     print(title)
-    # summary = html.select_one('div[class="story_area"] > p').text
+    summary = html.select_one('div[class="video"]').text
+
     img = soup.find("img")["src"]
+    print(summary)
     print(img)
     # dictionary로 저장
     context = {
         "title": title,
-        # # "summary": summary,
+        "summary": summary,
         "img": img[:-15],
     }
 
@@ -74,7 +76,7 @@ def add_data():
         Movie(
             title=item["title"],
             img=item["img"],
-            # summary=item["summary"],
+            summary=item["summary"],
         ).save()
 
     return result

@@ -6,8 +6,8 @@
 
 ## 사용 기술
 
-- 언어: HTML, CSS, JavaScript, Python
-- 라이브러리: urllib, re, request, bs4
+- 언어: HTML, Python
+- 라이브러리: bootstrap, urllib, re, request, bs4
 - 프레임워크: Django
 
 ## 개발 내용
@@ -22,7 +22,7 @@
    
    1. 네이버 영화 정보를 크롤링
    
-   2. 제목과 썸네일은 긁어오지만 내용은 동작안함
+   2. 제목과 썸네일은 긁어오지만 내용은 정확하게 동작안함
       
       - 각 영화별로 태그가 통일이 안된 상태
    
