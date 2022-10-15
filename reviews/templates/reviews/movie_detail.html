@@ -39,13 +39,16 @@
             <td>{{ review.created_at|date:'Y-m-d H:i' }}</td>
             <td>{{ review.updated_at|date:'Y-m-d H:i' }}</td>
             <td>{{ review.writer }}</td>
-            <td class="d-flex h-auto justify-content-end">
-
+            <td>
+                {% if request.user.is_authenticated %}
                 <a class="btn btn-primary" href="{% url 'reviews:review_update' review.pk %}">수정</a>
                 <form class='m-0' action="{% url 'reviews:review_delete' review.pk %}" method="POST">
                     {% csrf_token %}
                     <button type="submit" class="btn btn-danger ms-2">삭제</button>
                 </form>
+                {% else %}
+
+                {% endif %}
             </td>
         </tr>
         {% endfor %}
